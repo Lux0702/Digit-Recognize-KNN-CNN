@@ -1,7 +1,7 @@
 import streamlit as st
 import random_number as rn
 import CNN_train as cnn
-from PIL import ImageTk, Image
+from PIL import  Image
 import draw_number as dn
 import tensorflow as tf
 from tensorflow import keras 
