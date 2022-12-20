@@ -1,7 +1,7 @@
 import streamlit as st
 import random_number as rn
 import CNN_train as cnn
-from PIL import  Image
+from PIL import ImageTk, Image
 import draw_number as dn
 import tensorflow as tf
 from tensorflow import keras 
@@ -71,8 +71,8 @@ elif add_selectbox=="KNN-digit-recognize":
       image=Image.open('digit.jpg')
       st.image(image)
       btn_reg=st.button("Predict Number")
-    if btn_reg or st.session_state.key == 2:
-      rn.btn_recognition_click()
+      if btn_reg or st.session_state.key == 2:
+        rn.btn_recognition_click()
 #CNN
 elif add_selectbox=="CNN-digit-recognize":
   st.markdown("<h1 style='text-align: center; color: #FFFFFF;'>NHẬN DẠNG CHỮ SỐ</h1>", unsafe_allow_html=True)
@@ -115,8 +115,8 @@ elif add_selectbox=="CNN-digit-recognize":
       #rn.resized()
       st.image(image)
       btn_rec=st.button('Predict Number')
-    if btn_rec:
-      cnn.btn_recognition_click()  
+      if btn_rec:
+        cnn.btn_recognition_click()  
 else:
   st.markdown("<h1 style='text-align: center; color: #FFFFFF;'>NHẬN DẠNG CHỮ SỐ</h1>", unsafe_allow_html=True)
   show_colab = option_menu(
