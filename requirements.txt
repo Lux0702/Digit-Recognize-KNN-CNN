@@ -1,3 +1,4 @@
+pip==22.3.1
 opencv_python_headless==4.4.0.46
 numpy==1.18.5
 Keras==2.4.3
