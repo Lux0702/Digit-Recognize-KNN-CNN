@@ -24,13 +24,13 @@ if add_selectbox=="Home":
   st.image("https://www.mathedup.co.uk/wp-content/uploads/2015/08/pay-819587_1920.jpg")
   st.text('''Thành viên nhóm thực hiện:
                   1️⃣ Nguyễn Thanh Sang   20110710
-                  2️⃣ Lê Anh Kiệt         20110
+                  2️⃣ Lê Anh Kiệt         20110664
                   3️⃣ Văn Bá Trung Thành  20110722
             Đề tài : Nhận dạng chữ số bằng thuật toán KNN và CNN
-            Link source code: github
-            Link app đã deploy: www.''')
+            Link source code: https://github.com/Lux0702/Digit-Recognize-KNN-CNN.git
+            ''')
 elif add_selectbox=="KNN-digit-recognize":
-  st.markdown("<h1 style='text-align: center; color: #FFFFFF;'>NHẬN DẠNG CHỮ SỐ</h1>", unsafe_allow_html=True)
+  st.markdown("<h1 style=text-align: center; color: #000;>NHẬN DẠNG CHỮ SỐ</h1>", unsafe_allow_html=True)
   KNN_prediction_selected = option_menu(
         menu_title = 'KNN-digit-recognize',
         options = ['Drawing',"Upload",'Random'],
@@ -55,7 +55,8 @@ elif add_selectbox=="KNN-digit-recognize":
     if uploaded_file is not None:
       image=Image.open(uploaded_file)
       st.image(image)
-      image=image.save('digit.jpg')
+      rgb_im = image.convert('RGB')
+      rgb_im=rgb_im.save('digit.jpg')
     btn_pre=st.button("Predict Number")
     if btn_pre:
       rn.btn_recognition_click()  
@@ -71,8 +72,8 @@ elif add_selectbox=="KNN-digit-recognize":
       image=Image.open('digit.jpg')
       st.image(image)
       btn_reg=st.button("Predict Number")
-      if btn_reg or st.session_state.key == 2:
-        rn.btn_recognition_click()
+    if btn_reg or st.session_state.key == 2:
+      rn.btn_recognition_click()
 #CNN
 elif add_selectbox=="CNN-digit-recognize":
   st.markdown("<h1 style='text-align: center; color: #FFFFFF;'>NHẬN DẠNG CHỮ SỐ</h1>", unsafe_allow_html=True)
@@ -99,7 +100,8 @@ elif add_selectbox=="CNN-digit-recognize":
     if uploaded_file is not None:
       image=Image.open(uploaded_file)
       st.image(image)
-      image=image.save('digit.jpg')
+      rgb_im = image.convert('RGB')
+      rgb_im=rgb_im.save('digit.jpg')
     btn_pre=st.button("Predict Number")
     if btn_pre:
       cnn.btn_recognition_click()  
@@ -115,8 +117,8 @@ elif add_selectbox=="CNN-digit-recognize":
       #rn.resized()
       st.image(image)
       btn_rec=st.button('Predict Number')
-      if btn_rec:
-        cnn.btn_recognition_click()  
+    if btn_rec:
+      cnn.btn_recognition_click()  
 else:
   st.markdown("<h1 style='text-align: center; color: #FFFFFF;'>NHẬN DẠNG CHỮ SỐ</h1>", unsafe_allow_html=True)
   show_colab = option_menu(
@@ -131,8 +133,3 @@ else:
   else:
     ip.display_CNN()
      
-  #if tab
-  # tab
-
-
-
